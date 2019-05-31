@@ -4,19 +4,38 @@ botaoSalvaPaciente.addEventListener("click", eventoBotao);
 
 /** Evento que serve para adicionar todos os dados do paciente.*/
 function eventoBotao(event) {
-    event.preventDefault();
+    event.preventDefault();//FAz com que a pagina nao recarregue
     //Pegou elemento
     var formulario = document.querySelector("#form-adiciona");
     //Pegou as variaveis e mandou pro Objeto paciente
     var paciente = obterDadosPaciente(formulario);
-    //Vai Montar TRs e TDs
-    var pacienteTR = montarTr(paciente);
-    //vai colocar na tabela
-    var tabela = document.querySelector("#tabela-pacientes");
-    tabela.appendChild(pacienteTR);
-    formulario.reset();
-    console.log(pacienteTR);
-
+    var erros = validarPaciente(paciente);
+    console.log(erros);
+    if (erros.length == 0) {
+        //Vai Montar TRs e TDs
+        var pacienteTR = montarTr(paciente);
+        //vai colocar na tabela
+        var tabela = document.querySelector("#tabela-pacientes");
+        tabela.appendChild(pacienteTR);
+        formulario.reset();
+        var mensagensErro = document.querySelector("#mensagens-erro");
+        mensagensErro.innerHTML = "";
+        console.log(pacienteTR);
+    } else {
+        exibirMensagensDeErro(erros);
+        console.log(paciente);
+        console.log("paciente invalido");
+    }
+}
+/**Monta as li dentro da ul, exibindo a mensagem de erro no formulario. */
+function exibirMensagensDeErro(erros) {
+    var ul = document.querySelector("#mensagens-erro");
+    ul.innerHTML = "";
+    erros.forEach(function (erro) {
+        var li = document.createElement("li");
+        li.textContent = erro;
+        ul.appendChild(li);
+    });
 }
 
 /** Cria um objeto paciente com os dados do formulario. */
@@ -26,9 +45,9 @@ function obterDadosPaciente(formulario) {
         peso: formulario.peso.value,
         altura: formulario.altura.value,
         gordura: formulario.gordura.value,
-        imc: calcularIMC(peso, altura),
+        imc: calcularIMC(formulario.peso.value, formulario.altura.value)
     }
-
+    console.log(paciente.imc);
     return paciente;
 }
 /**Serve para montar o TD e insserir na tabela do site. */
