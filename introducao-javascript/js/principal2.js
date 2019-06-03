@@ -1,5 +1,5 @@
 var titulo = document.querySelector("h1");
-titulo.textContent = "Xota";
+titulo.textContent = "Clinica";
 
 //OBTER os pacientes
 var pacientes = document.querySelectorAll(".paciente");

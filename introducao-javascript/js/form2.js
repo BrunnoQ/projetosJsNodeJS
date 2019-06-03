@@ -10,23 +10,32 @@ function eventoBotao(event) {
     //Pegou as variaveis e mandou pro Objeto paciente
     var paciente = obterDadosPaciente(formulario);
     var erros = validarPaciente(paciente);
-    console.log(erros);
+    //console.log(erros);
     if (erros.length == 0) {
         //Vai Montar TRs e TDs
-        var pacienteTR = montarTr(paciente);
-        //vai colocar na tabela
-        var tabela = document.querySelector("#tabela-pacientes");
-        tabela.appendChild(pacienteTR);
+        // var pacienteTR = montarTr(paciente);
+        //vai colocar na tabela tudo foi para a funcao!
+        // var tabela = document.querySelector("#tabela-pacientes");
+        // tabela.appendChild(pacienteTR);
+        adicionarPacienteNaTabela(paciente);
         formulario.reset();
         var mensagensErro = document.querySelector("#mensagens-erro");
         mensagensErro.innerHTML = "";
-        console.log(pacienteTR);
+        // console.log(pacienteTR);
     } else {
         exibirMensagensDeErro(erros);
-        console.log(paciente);
-        console.log("paciente invalido");
+        // console.log(paciente);
+        // console.log("paciente invalido");
     }
 }
+
+/**Adiciona o paciente na tabela do HTML */
+function adicionarPacienteNaTabela(paciente) {
+    var pacienteTr = montarTr(paciente);
+    var tabela = document.querySelector("#tabela-pacientes");
+    tabela.appendChild(pacienteTr);
+}
+
 /**Monta as li dentro da ul, exibindo a mensagem de erro no formulario. */
 function exibirMensagensDeErro(erros) {
     var ul = document.querySelector("#mensagens-erro");
@@ -47,7 +56,7 @@ function obterDadosPaciente(formulario) {
         gordura: formulario.gordura.value,
         imc: calcularIMC(formulario.peso.value, formulario.altura.value)
     }
-    console.log(paciente.imc);
+    // console.log(paciente.imc);
     return paciente;
 }
 /**Serve para montar o TD e insserir na tabela do site. */

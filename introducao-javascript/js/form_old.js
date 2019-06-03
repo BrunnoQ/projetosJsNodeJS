@@ -32,7 +32,7 @@ function eventoBotao(event) {
     //vai colocar na tabela
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTR);
-    console.log(nomeTD);
+    //console.log(nomeTD);
 
 }
 
