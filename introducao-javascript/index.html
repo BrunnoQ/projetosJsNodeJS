@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Casa dos Prazeres</title>
+	<title>Clinica</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/index.css">
@@ -19,7 +19,9 @@
 	</header>
 	<main>
 		<section class="container">
-			<h2>Casa dos Prazeres</h2>
+			<h2>Clinica de Massagem</h2>
+			<label for="filtrar-tabela">Filtro:</label>
+			<input id="filtrar-tabela" type="text" placeholder="Digite o nome da libertina">
 			<table>
 				<thead>
 					<tr>
@@ -71,7 +73,8 @@
 					</tr>
 				</tbody>
 			</table>
-
+			<span id="erro-ajax" class="invisivel">Erro ao buscar os pacientes</span>
+			<button id="buscar-pacientes" class="botao bto-principal">Buscar Pacientes</button>
 		</section>
 	</main>
 
@@ -109,6 +112,8 @@
 	<script src="js/calcula-imc.js"></script>
 	<script src="js/principal2.js"></script>
 	<script src="js/remover-paciente.js"></script>
+	<script src="js/filtra.js"></script>
+	<script src="js/buscar-pacientes.js"></script>
 </body>
 
 </html>

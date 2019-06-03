@@ -7,10 +7,15 @@ var tabelaPacientes = document.querySelector("table");//Pegou toda a tabela
  * Dessa forma a cada elemento adicionado,
  * eh possivel exclui-lo
  */
-tabelaPacientes.addEventListener("dblclick",function(event){
+tabelaPacientes.addEventListener("dblclick", function (event) {
     var alvoEvento = event.target;
     var paiDoAlvo = alvoEvento.parentNode;//TR da tabela
-    paiDoAlvo.remove(); //Remove a linha toda 
+    paiDoAlvo.classList.add("fadeOut");//criei nova classe no CSS.
+
+    //Baitolagem para colocar opacidade
+    setTimeout(function () {
+        paiDoAlvo.remove()
+    }, 500); //Remove a linha toda 
 });
 
 
