@@ -1,0 +1,25 @@
+{
+  "name": "introducaojs",
+  "version": "1.0.0",
+  "description": "Projeto inicial para pegar as manhas do nodejs. Vai ter cagada pra caralho, mas quero me divertir!!!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrunnoQ/projetosJsNodeJS.git"
+  },
+  "keywords": [
+    "inicionodejs"
+  ],
+  "author": "Brunno Queiroz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrunnoQ/projetosJsNodeJS/issues"
+  },
+  "homepage": "https://github.com/BrunnoQ/projetosJsNodeJS#readme",
+  "dependencies": {
+    "express": "4.16.3"
+  }
+}
