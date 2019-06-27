@@ -1,4 +1,4 @@
-const http = require('http');
+const http = require('http');//Lidando diretamente com o protocolo HTTP, temos nuances desnecessarias e trabalhosas.
 
 const servidor = http.createServer(function(requisicao, resposta){
 

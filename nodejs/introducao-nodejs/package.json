@@ -4,7 +4,8 @@
   "description": "Projeto inicial para pegar as manhas do nodejs. Vai ter cagada pra caralho, mas quero me divertir!!!",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,8 @@
   "homepage": "https://github.com/BrunnoQ/projetosJsNodeJS#readme",
   "dependencies": {
     "express": "4.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.4"
   }
 }
